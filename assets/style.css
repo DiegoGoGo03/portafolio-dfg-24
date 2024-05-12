@@ -1,0 +1,224 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* UTILITIES */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  background-color: #fff;
+  border: none;
+  /* Padding --> Arriba y Abajo || A los lados */
+  padding: .75em 1.2em;
+  cursor: pointer;
+}
+
+.met-100 {
+  margin-top: 100px;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  border: 1px solid rgb(255, 0, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 25px #00000036;
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  color: rgb(32, 178, 170);
+  font-size: 38px;
+}
+
+/* .nav > * {
+  border: 1px solid red;
+} */
+
+.menu {
+  /* position: relative; */
+  display: flex;
+  /* text-align: center;   */
+  gap: 20px;
+}
+
+.menu__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu__link {
+  color: #000000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.32s;
+}
+
+.menu__link:hover {
+  color: rgb(32, 178, 170);
+}
+
+.btn-resume {
+  background-color: rgb(47, 47, 47);
+  border: 3px dotted rgb(251, 255, 0);
+  color: rgb(220, 213, 0);
+  text-decoration: none;
+  font-weight: 400;
+  /* width: max-content;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px; */
+  transition: background-color 0.4s; 
+}
+
+.btn-resume:hover {
+  background-color: #6aff00;
+  border: 2px solid rgb(32, 178, 170);
+  color: #000000;
+  font-weight: 600;
+}
+
+/* RESPONSIVE DESIGN
+Dispositivos md Tablet
+0-768 px */
+@media (max-width: 900px) {
+  .menu {
+    border: 3px solid rgb(255, 0, 0);  /*O_J_O*/
+    text-align: center;
+    background-color: rgba(0, 84, 168, 0.804);
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* gap: 60px; */
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    /* display: none; */
+    width: 100%;
+    transition: left 0.3s;  /*O_J_O*/
+    }
+
+  .show-menu {
+    left: 0;   /*O_J_O*/
+  }
+
+  .menu__list {
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 50px;
+  }
+
+  /* Se debe agregar los estilos a menu__link y y no a menu__item */
+  .menu__link {
+    color: #2d2d2d9a;
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none; /*O_J_O  Underline*/
+    text-decoration-style: dashed;   /*O_J_O*/
+    text-underline-offset: 7px;  /*O_J_O*/
+    transition: color 0.3s;
+  }
+
+  .menu__link:hover {
+    color: #ffea00;
+    font-weight: 600; /*O_J_O*/
+    text-decoration: underline overline #FF3028;;
+  }
+
+  .btn-resume {
+    background-color: transparent;
+    border: 3px dashed #fff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    width: max-content;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    transition: background-color 0.38s;
+  }
+
+  .btn-resum:hover {
+    background-color: #fff;
+    color: rgb(32, 178, 170);
+  } 
+}
+
+.btn-close {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 50%);
+  color: #fff;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.45s;
+}
+
+.btn-close:hover {
+  background-color: #6aff00;
+}
+
+.btn-open {
+  background-color: transparent;
+  font-size: 28px;
+  padding: 0.45em;
+}
+
+@media (min-width: 900px) {
+  .nav  {
+    height: 90px;
+  }
+
+  .btn-close {
+    display: none;
+  }
+
+  .btn-open {
+    visibility: hidden;
+  }
+}

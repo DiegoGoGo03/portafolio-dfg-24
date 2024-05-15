@@ -86,12 +86,20 @@ sr.reveal('.skills__content', { origin: 'top', distance: '100px' })
 
 
 
-/*____________________BOTON DE IR ARRIBA______________________*/
+/*____________________BOTONES INTERACTIVOS______________________*/
 window.onscroll = function () {
+  /*____________________BOTON DE IR ARRIBA______________________*/
   if(document.documentElement.scrollTop > 100) {
     document.querySelector('.go-top-container').classList.add('show');
   } else {
     document.querySelector('.go-top-container').classList.remove('show');
+
+  }
+  /*____________________BOTON DE WHATSAPP______________________*/
+  if(document.documentElement.scrollTop > 100) {
+    document.querySelector('.go-to-wa-container').classList.add('show-wa');
+  } else {
+    document.querySelector('.go-to-wa-container').classList.remove('show-wa');
 
   }
 }
@@ -102,5 +110,10 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
     behavior: 'smooth'
   });
 })
+
+
+/*____________________BOTON DE WA______________________*/
+
+
 
 

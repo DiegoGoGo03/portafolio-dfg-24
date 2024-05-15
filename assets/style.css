@@ -1,9 +1,9 @@
 :root {
   --header-height: 60px;
   --bg-body: #fff;
-  --txt-body: #000;
+  --txt-body: #000000;
   --bg-nav: #fff;
-  --color-primary: #fe7777;
+  --color-primary: #b0b300;
   --btn-color: #000;
 }
 
@@ -12,7 +12,7 @@ body.dark {
   --txt-body: #f0f0f0;
   --bg-nav: #111;
   --btn-color: #fff;
-  --color-primary: #fe7777;
+  --color-primary: #2b96b5;
 }
 
 html {
@@ -112,6 +112,7 @@ section {
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo i {
@@ -554,9 +555,9 @@ Dispositivos md Tablet
 /* BOTON DE IR ARRIBA */
 .go-top-container {
   position: fixed;
-  bottom: 0.1rem;
+  bottom: 0.0rem;
   right: 0.1rem;
-  width: 2.5rem;
+  width: 1.5rem;
   height: 2.5rem;
   z-index: -1;
 }
@@ -602,6 +603,77 @@ Dispositivos md Tablet
 }
 
 .show i {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+@keyframes popup {
+  0% {
+    width: 0rem;
+    height: 0rem;
+  }
+  50%  {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+  100% {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+
+/* BOTÓN DE WHATSAPP */
+.go-to-wa-container {
+  position: fixed;
+  bottom: 3.4rem;
+  right: 0.1rem;
+  width: 1.5rem;
+  height: 2.5rem;
+  z-index: -1;
+}
+
+.go-to-wa-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0rem;
+  height: 0rem;
+  background-color: rgb(53, 167, 18);
+  cursor: pointer;
+  transition: 0.2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 40%;
+}
+
+.go-to-wa-button i {
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.show-wa {
+  z-index: 10;
+}
+
+.show-wa .go-to-wa-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popup 0.3s ease-in-out;
+  width: 3rem;
+  height: 3rem;
+  z-index: 11;
+}
+
+.show-wa i {
   transform: translate(-50%, -50%) scale(1);
 }
 

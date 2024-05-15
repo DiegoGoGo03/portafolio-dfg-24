@@ -112,7 +112,80 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
 })
 
 
-/*____________________BOTON DE WA______________________*/
+/*____________________FONDO MATRIX______________________*/
+// const canvas = document.getElementById("canva-matrix");
+
+// const ctx = canvas.getContext("2d");
+// const w  = document.body.offsetWidth;
+// const h  = document.body.offsetHeight;
+
+// const cols = Math.floor(w/20) + 1;
+// const ypos = Array(cols).fill(0);
+
+// ctx.fillStyle = "#000";
+// ctx.fillRect(0, 0, w, h);
+
+// function matrix () {
+//   ctx.fillStyle = "#0001";
+//   ctx.fillRect(0, 0, w, h);
+
+//   ctx.fillStyle = "#0f0"
+//   ctx.font = "15pt monospace"
+
+//   ypos.forEach ((y, ind) => {
+//     const text = String.fromCharCode(Math.random() * 128);
+//     const x = ind * 20;
+//     ctx.fillText(text, x, y);
+
+//     if(y > 100 + Math.random() * 10000) ypos [ind] = 0;
+    
+//     else ypos [ind] = y + 20;
+ 
+//   })
+// }
+// setInterval(matrix, 50);
+
+const canvas = document.getElementById("canva-matrix");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = document.querySelector('.matrix-container').clientWidth;
+    canvas.height = document.querySelector('.matrix-container').clientHeight;
+}
+
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    initializeMatrix();
+});
+resizeCanvas();
+
+let cols;
+let ypos;
+
+function initializeMatrix() {
+    cols = Math.floor(canvas.width / 20) + 1;
+    ypos = Array(cols).fill(0);
+}
+
+function matrix() {
+    ctx.fillStyle = "#0001";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0f0";
+    ctx.font = "15pt monospace";
+
+    ypos.forEach((y, ind) => {
+        const text = String.fromCharCode(Math.random() * 128);
+        const x = ind * 20;
+        ctx.fillText(text, x, y);
+
+        if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+        else ypos[ind] = y + 20;
+    });
+}
+
+setInterval(matrix, 100);
+initializeMatrix();
 
 
 

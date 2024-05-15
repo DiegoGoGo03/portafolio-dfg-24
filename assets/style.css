@@ -1,3 +1,4 @@
+/* ____________________________RAÍZ___________________________ */
 :root {
   --header-height: 60px;
   --bg-body: #fff;
@@ -5,6 +6,11 @@
   --bg-nav: #fff;
   --color-primary: #b0b300;
   --btn-color: #000;
+
+  --color-primary-inv: #2b96b5;
+  --color-contraste-menu: #000000;
+  --color-title: #ffffff;
+
 }
 
 body.dark {
@@ -13,6 +19,10 @@ body.dark {
   --bg-nav: #111;
   --btn-color: #fff;
   --color-primary: #2b96b5;
+
+  --color-primary-inv: #b0b300;
+  --color-contraste-menu: #000000;
+  --color-title: #ffffff;
 }
 
 html {
@@ -33,6 +43,8 @@ body {
   font-family: sans-serif;
   margin: 0;
   font-size: 1rem;
+  /* height: 100vh;
+  width: 100vw; */
 }
 
 img {
@@ -40,7 +52,7 @@ img {
   height: auto;
 }
 
-/* UTILITIES */
+/* _____________________UTILITIES_______________________ */
 section {
   padding: 45px 0 20px;
 
@@ -86,7 +98,7 @@ section {
   overflow: hidden;
 }
 
-/* HEADER */
+/*_________________________HEADER_____________________________ */
 .header {
   position: fixed;
   border-bottom: 2px solid rgb(71, 71, 71);
@@ -153,21 +165,25 @@ section {
 }
 
 .btn-resume {
-  background-color: rgb(47, 47, 47);
-  border: 3px dotted rgb(251, 255, 0);
-  color: rgb(220, 213, 0);
+  /* background-color: rgb(47, 47, 47); */
+  background-color: #e4e4e4;
+  border: 3px dotted var(--color-primary);
+  /* color: rgb(220, 213, 0); */
+  color: #0c0c0c;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 600;
   /* width: max-content;
   display: block;
   margin: 0 auto;
   font-size: 18px; */
   transition: background-color 0.4s; 
+  padding: 10px;
+
 }
 
 .btn-resume:hover {
-  background-color: #6aff00;
-  border: 2px solid var(--color-primary);
+  background-color: #ffffff;
+  border: 3px solid var(--color-primary);
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -177,9 +193,9 @@ Dispositivos md Tablet
 0-768 px */
 @media (max-width: 900px) {
   .menu {
-    border: 3px solid rgb(156, 0, 0);  /*O_J_O*/
+    border: 3px solid rgb(156, 91, 0);  /*O_J_O*/
     text-align: center;
-    background-color: rgb(0, 84, 168);
+    background-color: var(--color-primary);
     /* background-color: var(--color-primary); */
     flex-direction: column;
     justify-content: space-evenly;
@@ -187,15 +203,16 @@ Dispositivos md Tablet
     position: fixed;
     top: 0;
     left: 100%;
-    bottom: 0;
+    bottom: 10px;
     /* display: none; */
-    width: 88%;
+    width: 68%;
     transition: left 0.3s;  /*O_J_O*/
+    z-index: 100;
     
     }
 
   .show-menu {
-    left: 10%;   /*O_J_O*/
+    left: 30%;   /*O_J_O*/
     box-shadow: 0 0 15px #f2ff009e;
 
   }
@@ -208,20 +225,28 @@ Dispositivos md Tablet
 
   /* Se debe agregar los estilos a menu__link y y no a menu__item */
   .menu__link {
-    color: #2d2d2d9a;
+    color: #353535;
     font-size: 32px;
     font-weight: 600;
     text-decoration: none; /*O_J_O  Underline*/
     text-decoration-style: dashed;   /*O_J_O*/
     text-underline-offset: 7px;  /*O_J_O*/
     transition: color 0.3s;
+
   }
 
   .menu__link:hover {
-    color: #ffea00;
+    background-color: none;
+    color: var(--color-contraste-menu);
     font-weight: 600; /*O_J_O*/
-    text-decoration: underline overline #FF3028;;
+    text-decoration: underline overline #fcfcfc;
+    /* box-shadow: 0 2px 50px #454545; */
+    box-shadow: 0 15px 10px -2px rgba(82, 82, 82, 0.534);
+    padding: 0%;
+  
   }
+
+
 
   .btn-resume {
     background-color: transparent;
@@ -235,14 +260,15 @@ Dispositivos md Tablet
     margin: 0 auto;
     font-size: 20px;
     transition: background-color 0.38s;
+    padding: 12px;
   }
 
   .btn-resume:hover {
-    background-color: #6aff00;
-    border: 2px solid rgb(0, 0, 0);
+    background-color: #b0b300;
+    border: 3px solid rgb(0, 0, 0);
     color: #000000;
     font-weight: 600;
-    padding: 15px;
+    padding: 12px;
   } 
 }
 
@@ -270,9 +296,13 @@ Dispositivos md Tablet
 }
 
 .btn-open {
+  position: absolute; 
+  top: 0.08rem;
+  right: 45px;
   background-color: transparent;
   font-size: 28px;
-  padding: 0.45em;
+  padding:0.45em;
+  
 }
 
 .btn-theme {
@@ -288,14 +318,14 @@ Dispositivos md Tablet
 }
 
 
-/* IDIOMA */
+/*__________________________________IDIOMA_______________________________*/
 .btn-lang a {
   color: var(--color-text);
   text-decoration: none;
 }
 
 .hero {
-  background: linear-gradient(0deg, #0000009e, #000000c4 60%), url('img/bg.jpg');
+  background: linear-gradient(0deg, #0000009e, #000000c4 100%), url('img/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -314,6 +344,7 @@ Dispositivos md Tablet
 }
 
 .hero__title {
+  color: var(--color-title);
   text-align: center;
   font-size: 2.5rem;
   font-weight: 400;
@@ -390,6 +421,7 @@ Dispositivos md Tablet
   text-align: center;
 }
 
+/*_________________________REDES SOCIALES___________________________*/
 .social {
   list-style: none;
   padding: 0;
@@ -398,15 +430,15 @@ Dispositivos md Tablet
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 20px;
+  gap: 35px;
 }
 
 .social__link {
-  color: var(--color-text);
+  color: var(--color-title);
 }
 
 .social__link i {
-  font-size: 24px;
+  font-size: 30px;
   transform: scale(1);
   transition: color .5s, transform .3s;
 }
@@ -416,7 +448,7 @@ Dispositivos md Tablet
   color: var(--color-primary);
 }
 
-/* SKILLS */
+/*__________________________SKILLS_______________________________*/
 .skills__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -552,11 +584,11 @@ Dispositivos md Tablet
 
 
 
-/* BOTON DE IR ARRIBA */
+/*_________________________BOTON DE IR ARRIBA_________________________*/
 .go-top-container {
   position: fixed;
   bottom: 0.0rem;
-  right: 0.1rem;
+  right: 0.3rem;
   width: 1.5rem;
   height: 2.5rem;
   z-index: -1;
@@ -580,7 +612,7 @@ Dispositivos md Tablet
 
 .go-top-button i {
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -597,8 +629,8 @@ Dispositivos md Tablet
   align-items: center;
   justify-content: center;
   animation: popup 0.3s ease-in-out;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   z-index: 11;
 }
 
@@ -613,21 +645,21 @@ Dispositivos md Tablet
     height: 0rem;
   }
   50%  {
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
   100% {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
 
-/* BOTÓN DE WHATSAPP */
+/*______________________BOTÓN DE WHATSAPP______________________ */
 .go-to-wa-container {
   position: fixed;
   bottom: 3.4rem;
-  right: 0.1rem;
+  right: 0.3rem;
   width: 1.5rem;
   height: 2.5rem;
   z-index: -1;
@@ -651,7 +683,7 @@ Dispositivos md Tablet
 
 .go-to-wa-button i {
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -668,8 +700,8 @@ Dispositivos md Tablet
   align-items: center;
   justify-content: center;
   animation: popup 0.3s ease-in-out;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   z-index: 11;
 }
 
@@ -684,11 +716,26 @@ Dispositivos md Tablet
     height: 0rem;
   }
   50%  {
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
   100% {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
+
+/*____________________________ZONA MATRIX___________________________*/
+.matrix {
+  height: 50px;
+  padding: 0%;
+
+}
+
+.matrix-container {
+  width: 100%;
+  height: 60px; /* Ajusta esta altura según tus necesidades */
+  overflow: hidden; /* Evita las barras de desplazamiento */
+  background-color: black; /* Fondo negro para el efecto */
+}
+

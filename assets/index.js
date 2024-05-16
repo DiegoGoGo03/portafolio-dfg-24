@@ -59,13 +59,13 @@ btnTheme.addEventListener('click', function () {
 
 /*___________________________TYPING__________________________*/
 var typed = new Typed('#typing', {
-  strings: ['Frontend Developer', 'Web Developer', 'Designer', 'Fullstack Developer'],
-  typeSpeed: 50,
-  backSpeed: 50,
+  strings: ['Frontend Developer', 'Web Developer', 'Designer', 'Prompt Engineer', 'Fullstack Developer'],
+  typeSpeed: 90,
+  backSpeed: 70,
   startDelay: 25,
   loop: true,
   loopCount: Infinity,
-  cursorChar: '_',
+  cursorChar: '|',
 })
 
 
@@ -73,7 +73,7 @@ var typed = new Typed('#typing', {
 const sr = new ScrollReveal({
   origin: 'top',
   distance: '80px',
-  duration: 2000,
+  duration: 1800,
   reset: true
 })
 
@@ -113,38 +113,6 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
 
 
 /*____________________FONDO MATRIX______________________*/
-// const canvas = document.getElementById("canva-matrix");
-
-// const ctx = canvas.getContext("2d");
-// const w  = document.body.offsetWidth;
-// const h  = document.body.offsetHeight;
-
-// const cols = Math.floor(w/20) + 1;
-// const ypos = Array(cols).fill(0);
-
-// ctx.fillStyle = "#000";
-// ctx.fillRect(0, 0, w, h);
-
-// function matrix () {
-//   ctx.fillStyle = "#0001";
-//   ctx.fillRect(0, 0, w, h);
-
-//   ctx.fillStyle = "#0f0"
-//   ctx.font = "15pt monospace"
-
-//   ypos.forEach ((y, ind) => {
-//     const text = String.fromCharCode(Math.random() * 128);
-//     const x = ind * 20;
-//     ctx.fillText(text, x, y);
-
-//     if(y > 100 + Math.random() * 10000) ypos [ind] = 0;
-    
-//     else ypos [ind] = y + 20;
- 
-//   })
-// }
-// setInterval(matrix, 50);
-
 const canvas = document.getElementById("canva-matrix");
 const ctx = canvas.getContext("2d");
 

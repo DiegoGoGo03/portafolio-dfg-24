@@ -4,12 +4,15 @@
   --bg-body: #fff;
   --txt-body: #000000;
   --bg-nav: #fff;
-  --color-primary: #b0b300;
+  --color-primary: #f7df1e;
   --btn-color: #000;
 
   --color-primary-inv: #2b96b5;
   --color-contraste-menu: #000000;
   --color-title: #ffffff;
+
+  --hero-first: #0000009e;
+  --hero-second:#000000c4;
 
 }
 
@@ -23,12 +26,16 @@ body.dark {
   --color-primary-inv: #b0b300;
   --color-contraste-menu: #000000;
   --color-title: #ffffff;
+
+  --hero-first: #0000009e;
+  --hero-second:#000000c4;
 }
 
 html {
   font-size: 16px;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* list-style: none; */
 }
 
 *,
@@ -53,8 +60,8 @@ img {
 }
 
 /* _____________________UTILITIES_______________________ */
-section {
-  padding: 45px 0 20px;
+.section {
+  padding: 10px 0 5px;
 
 }
 
@@ -69,8 +76,8 @@ section {
   bottom: 0;
   content: '';
   display: inline-block;
-  width: 50px;
-  height: 5px;
+  width: 120px;
+  height: 3px;
   border-radius: 4px;
   background-color: var(--color-primary);
   transform: translateX(-50%);
@@ -154,6 +161,7 @@ section {
 }
 
 .menu__link {
+  font-size: 18px;
   color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
@@ -161,6 +169,13 @@ section {
 }
 
 .menu__link:hover {
+  color: var(--color-primary);
+  text-shadow: 0 1px 0.15rem rgb(0, 0, 0);
+}
+
+.menu__link.active {
+  -webkit-text-stroke: 0.02rem rgb(0, 0, 0);
+  text-shadow: 0 1.5px 0.2rem rgb(29, 29, 29);
   color: var(--color-primary);
 }
 
@@ -246,7 +261,9 @@ Dispositivos md Tablet
   
   }
 
-
+  .menu__link.active {
+    color: rgb(255, 255, 255);
+  }
 
   .btn-resume {
     background-color: transparent;
@@ -295,6 +312,11 @@ Dispositivos md Tablet
 
 }
 
+.btns {
+  display: flex;
+  gap: 15px;
+}
+
 .btn-open {
   position: absolute; 
   top: 0.08rem;
@@ -311,21 +333,21 @@ Dispositivos md Tablet
   padding: 0;
 }
 
+
+/*__________________________________IDIOMA_______________________________*/
 .btn-lang {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-/*__________________________________IDIOMA_______________________________*/
 .btn-lang a {
   color: var(--color-text);
   text-decoration: none;
 }
 
 .hero {
-  background: linear-gradient(0deg, #0000009e, #000000c4 100%), url('img/bg.jpg');
+  /* background: linear-gradient(0deg, var(--color-primary), #000000c4 100%), url('img/banner/bg.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -335,7 +357,46 @@ Dispositivos md Tablet
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: hero 18s infinite linear alternate;
+
 }
+
+@keyframes hero {
+  0%, 24% {
+    background-image: url('img/banner/bg.jpg');
+    background: linear-gradient(0deg, var(--hero-first), var(--hero-second) 100%), url('img/banner/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+  }
+  25%, 49% {
+    background-image: url('img/banner/bg_2.jpg');
+    background: linear-gradient(0deg, var(--hero-first), var(--hero-second) 100%), url('img/banner/bg_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  50%, 74% {
+    background-image: url('img/banner/bg_3.jpg');
+    background: linear-gradient(0deg, var(--hero-first), var(--hero-second) 100%), url('img/banner/bg_3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  75%, 100% {
+    background-image: url('img/banner/bg_4.jpg');
+    background: linear-gradient(0deg, var(--hero-first), var(--hero-second) 100%), url('img/banner/bg_4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
 
 .hero__container {
   display: flex;
@@ -422,6 +483,10 @@ Dispositivos md Tablet
 }
 
 /*_________________________REDES SOCIALES___________________________*/
+.social__item {
+  position: relative;
+}
+
 .social {
   list-style: none;
   padding: 0;
@@ -434,6 +499,8 @@ Dispositivos md Tablet
 }
 
 .social__link {
+  text-decoration: none;
+  position: relative;
   color: var(--color-title);
 }
 
@@ -485,6 +552,68 @@ Dispositivos md Tablet
   list-style: none;
   padding: 0;
 }
+
+/*__________________________PROJECTS_______________________________*/
+.projects__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.projects__card {
+  background-color: #00000022;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project__img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projects__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: transform .4s;
+}
+
+.projects__card:hover .projects__img {
+  transform: scale(2.25);
+}
+
+.projects__links {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.projects__links a {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 12px;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  padding: .5em 1em;
+  display: inline-block;
+  border-radius: 4px 4px 0 0;
+  transition: opacity 0.5s;
+}
+
+.projects__card:hover .projects__links a {
+  visibility: visible;
+  opacity: 1;
+}
+
+.projects__content {
+  padding: 20px;
+}
+
 
 @media (min-width: 900px) {
   :root {
@@ -734,8 +863,191 @@ Dispositivos md Tablet
 
 .matrix-container {
   width: 100%;
-  height: 60px; /* Ajusta esta altura según tus necesidades */
-  overflow: hidden; /* Evita las barras de desplazamiento */
-  background-color: black; /* Fondo negro para el efecto */
+  height: 60px; 
+  overflow: hidden;
+  background-color: black; 
+}
+
+/*__________________________TOOLTIP REDES___________________________*/
+.tooltip {
+  font-size: 1.2rem;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 7px;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.social__link:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*__________________________TOOLTIP NATIVO___________________________*/
+/* .tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-button:focus + .tooltip,
+.tooltip-button:active + .tooltip {
+  display: block;
+} */
+
+
+/*________________________________FOOTER___________________________________*/
+.container__footer {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: var(--color-primary);
+  padding: 20px 0 0 20px;
+  list-style: none;
+  box-sizing: border-box;
+
+}
+
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.footer__links {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer__links h4 {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 1px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-primary-inv);
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+.footer__links ul {
+  list-style: none;
+  padding: 0%;
+}
+
+.footer__links ul li a {
+  font-size: 19px;
+  text-decoration: none;
+  color: #090909;
+  display: block;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+
+
+.footer__links ul li a:hover {
+  color: #f2f2f2;
+  padding-left: 5px;
+  text-shadow: 0 1px 0.15rem rgb(0, 0, 0);
+}
+
+.social__links__footer {
+  padding: 15px 0px 0px 0px;
+  align-content: center;
+
+}
+
+
+.social__links__footer a {
+  display: inline-block;
+  min-height: 40px;
+  width: 40px;
+  background-color: #000000;
+  margin: 0 10px 10px 0;
+  /* text-align: center; */
+  line-height: 40px;
+  border-radius: 50%;
+  color: #e4e4e4;
+  transition: all 0.5s ease;
+  text-align: center;
+
+}
+
+.social__links__footer a:hover {
+  background-color: var(--color-primary-inv);
+  color: #000;
+  /* text-shadow: 0 2px 0.15rem rgb(95, 95, 95); */
+  font-size: 20px;
+  min-height: 45px;
+  width: 45px;
+  
+}
+
+
+@media (max-width:991px) {
+  .footer__row {
+    text-align: center;
+  }
+
+  .footer__links {
+    width: 100%;
+    margin-bottom: 0%;
+    text-align: center;
+  }
+
 }
 

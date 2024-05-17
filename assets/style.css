@@ -145,6 +145,8 @@ img {
   border: 1px solid red;
 } */
 
+
+/*__________________________________MENU____________________________________ */
 .menu {
   /* position: relative; */
   display: flex;
@@ -182,17 +184,11 @@ img {
 }
 
 .btn-resume {
-  /* background-color: rgb(47, 47, 47); */
   background-color: #e4e4e4;
   border: 3px dotted var(--color-primary);
-  /* color: rgb(220, 213, 0); */
   color: #0c0c0c;
   text-decoration: none;
   font-weight: 600;
-  /* width: max-content;
-  display: block;
-  margin: 0 auto;
-  font-size: 18px; */
   transition: background-color 0.4s; 
   padding: 10px;
 
@@ -210,33 +206,31 @@ Dispositivos md Tablet
 0-768 px */
 @media (max-width: 900px) {
   .menu {
-    border: 3px solid rgb(156, 91, 0);  /*O_J_O*/
+    border: 3px solid rgb(156, 91, 0); 
     text-align: center;
     background-color: var(--color-primary);
-    /* background-color: var(--color-primary); */
     flex-direction: column;
     justify-content: space-evenly;
-    /* gap: 60px; */
+
     position: fixed;
     top: 0;
     left: 100%;
     bottom: 10px;
-    /* display: none; */
+
     width: 68%;
-    transition: left 0.3s;  /*O_J_O*/
+    transition: left 0.3s;
     z-index: 100;
     
     }
 
   .show-menu {
-    left: 30%;   /*O_J_O*/
+    left: 30%;   
     box-shadow: 0 0 15px #f2ff009e;
 
   }
 
   .menu__list {
     flex-direction: column;
-    /* justify-content: space-between; */
     gap: 50px;
   }
 
@@ -245,9 +239,9 @@ Dispositivos md Tablet
     color: #353535;
     font-size: 32px;
     font-weight: 600;
-    text-decoration: none; /*O_J_O  Underline*/
-    text-decoration-style: dashed;   /*O_J_O*/
-    text-underline-offset: 7px;  /*O_J_O*/
+    text-decoration: none; 
+    text-decoration-style: dashed;   
+    text-underline-offset: 7px;  
     transition: color 0.3s;
 
   }
@@ -255,9 +249,9 @@ Dispositivos md Tablet
   .menu__link:hover {
     background-color: none;
     color: var(--color-contraste-menu);
-    font-weight: 600; /*O_J_O*/
+    font-weight: 600; 
     text-decoration: underline overline #fcfcfc;
-    /* box-shadow: 0 2px 50px #454545; */
+
     box-shadow: 0 15px 10px -2px rgba(82, 82, 82, 0.534);
     padding: 0%;
   
@@ -269,7 +263,6 @@ Dispositivos md Tablet
 
   .btn-resume {
     background-color: transparent;
-    /* background-color: var(--bg-alt-color); */
     border: 3px dashed #fff;
     color: #fff;
     font-weight: 600;
@@ -428,9 +421,6 @@ Dispositivos md Tablet
   transform-origin: 70% 70%;
   animation: saludo-animacion 2.5s infinite;
 
-  /* animation-name: saludo-animacion;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite; */
 }
 
 .hero__content-img {
@@ -484,7 +474,7 @@ Dispositivos md Tablet
   text-align: center;
 }
 
-/*_________________________REDES SOCIALES___________________________*/
+/*______________________________REDES SOCIALES_______________________________*/
 .social__item {
   position: relative;
 }
@@ -517,7 +507,7 @@ Dispositivos md Tablet
   color: var(--color-primary);
 }
 
-/*__________________________SKILLS_______________________________*/
+/*________________________________SKILLS__________________________________*/
 .skills__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -621,9 +611,9 @@ Dispositivos md Tablet
 }
 
 .projects__card:hover .projects__img {
-  rotate: 3grad;
-  transform: scale(1.2);
-  opacity: 0.7;
+  rotate: 0.8grad;
+  transform: scale(1.1);
+  opacity: 0.98;
 }
 
 .projects__links {
@@ -655,6 +645,50 @@ Dispositivos md Tablet
 .projects__content {
   padding: 20px;
 }
+
+
+/*__________________________CONTACTO_______________________________*/
+.contact__content {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.contact__text {
+  margin-bottom: 30px;
+}
+
+.contact__box {
+  border: 2px solid var(--btn-color);
+  border-radius: 5px;
+  padding: 0.3em 0.9em;
+  width: max-content;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  
+}
+
+.contact__box:hover {
+  transform: translateY(-2px);
+  box-shadow: -4px 5px 10px var(--color-primary);
+  
+}
+
+
+.contact__link {
+  text-decoration: none;
+  color: var(--btn-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.contact__link p {
+  border-left: 1px solid var(--btn-color);
+  padding-left: 3px;
+}
+
 
 
 @media (min-width: 900px) {

@@ -122,6 +122,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 
 .logo {
@@ -131,7 +132,8 @@ img {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+  padding-right: 10px;
 }
 
 .logo i {
@@ -553,6 +555,44 @@ Dispositivos md Tablet
   padding: 0;
 }
 
+
+/*__________________________HERRAMIENTAS_______________________________*/
+.herramientas__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.herramientas__card {
+  background-color: #00000027;
+  border-radius: 10px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.herramientas__icon {
+  width: 50px;
+}
+
+.herramientas__text {
+  display: block;
+  text-align: center;
+}
+
+.herramientas__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+
+
 /*__________________________PROJECTS_______________________________*/
 .projects__container {
   display: grid;
@@ -581,7 +621,9 @@ Dispositivos md Tablet
 }
 
 .projects__card:hover .projects__img {
-  transform: scale(2.25);
+  rotate: 3grad;
+  transform: scale(1.2);
+  opacity: 0.7;
 }
 
 .projects__links {

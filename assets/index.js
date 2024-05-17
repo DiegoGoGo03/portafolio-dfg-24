@@ -154,7 +154,3 @@ function matrix() {
 
 setInterval(matrix, 100);
 initializeMatrix();
-
-
-
-

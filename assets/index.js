@@ -1,28 +1,43 @@
 /*______________________NAV BAR_______________________*/
-const menu = document.getElementById('menu')
-const nav = document.querySelector('.nav')
-const links = nav.querySelectorAll('.menu__link')
+const menu = document.getElementById('menu');
+const nav = document.querySelector('.nav');
+const links = nav.querySelectorAll('.menu__link');
 
+// Asumiendo que tu navbar tiene una altura fija, por ejemplo 80px
+const navbarHeight = 80;
 
-nav.addEventListener('click', function (event) {
+nav.addEventListener('click', function(event) {
   if (event.target.closest('#btnOpen')) {
-    menu.classList.add('show-menu')
+    menu.classList.add('show-menu');
   }
 
   if (event.target.closest('#btnClose')) {
-    menu.classList.remove('show-menu')
+    menu.classList.remove('show-menu');
   }
 
   if (event.target.matches('.menu__link')) {
-    menu.classList.remove('show-menu')
+    menu.classList.remove('show-menu');
 
     for (const link of links) {
-      link.classList.remove('active')
+      link.classList.remove('active');
     }
 
-    event.target.classList.add('active')
+    event.target.classList.add('active');
+
+    // Desplazar la página suavemente hasta la sección correspondiente
+    const targetId = event.target.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - navbarHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    event.preventDefault();
   }
-})
+});
 
 
 /*________________________DARK MODE_________________________*/

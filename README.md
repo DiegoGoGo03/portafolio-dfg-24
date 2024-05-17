@@ -23,12 +23,12 @@ De esta forma presento mis conocimientos a posibles reclutadores y clientes, mos
 - **Dark y Light Mode**: Todo el diseño responde a parámetros en modo oscuro y un modo claro con los que el usuario puede interactuar.
 - **Descarga de Curriculum**: Es posible descargar mi curriculum personal den formato PDF dando click en el botón de "Descargar CV" que se encuentra en la sección de navegación.
 - **Tecnologías utilizadas**:
-    --  HTML
-    --  CSS
-    --  JavaScript
-    --  Git
-    --  GitHub
-    --  Netlify
+    - ![HTML](assets/icons/html.svg) HTML
+    - ![CSS](assets/icons/css.svg) CSS
+    - ![JS](assets/icons/javascript.svg) JavaScript
+    - ![GIT](assets/icons/git.svg) Git
+    - ![GITHUB](assets/icons/github.svg) GitHub
+    - ![NETLIFY](assets/icons/netlify.svg) Netlify
 
 ## Contribución
 Te invito a que seas parte de mi portafolio contribuyendo con tus ideas. Si es así, es posible abrir un **issue** para discutir nuevas características o solucionar problemas. También podrías enviar un **pull request** con tu propuesta.

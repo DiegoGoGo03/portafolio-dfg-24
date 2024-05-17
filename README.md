@@ -4,6 +4,8 @@
 En este repositorio encontrarán mi portafolio personal, desarrollado con HTML, CSS y JavaScript.
 De esta forma presento mis conocimientos a posibles reclutadores y clientes, mostrando la implementación de diferentes tecnologías para el desarrollo de aplicaciónes Web con diseño responsive.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ce4ef13-1c34-46a7-a7f0-16ce68f99a3b/deploy-status)](https://app.netlify.com/sites/diego-felipe-gomez/deploys)
+
 ![Desktop](assets/img/readme/DESKTOP.png)
 ![Mobile](assets/img/readme/MOBILE.png)
 
